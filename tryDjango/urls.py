@@ -15,12 +15,23 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf.urls import url
 
-from restuarants.views import home,about,contact
+from django.views.generic import TemplateView
+
+from restuarants.views import HomeView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',home),
-    path('about/',about),
-    path('contact/',contact)
+    # path('',home),
+    # path('about/',about),
+    # path('contact/<int:id>',ContactView.as_view())
+
+    path('',HomeView.as_view()),
+    # path('about/',AboutView.as_view()), # AND delete AboutView in views.py
+    # path('contact/',ContactView.as_view() # AND delete ContactView in views.py
+
+    path("about/",TemplateView.as_view(template_name='about.html')),
+    path("contact/",TemplateView.as_view(template_name='contact.html'))
+
 ]
