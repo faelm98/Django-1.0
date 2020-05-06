@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block head_title %} MuyPickiy.com {% endblock head_title %}</title>
+
+    {% include 'snippets/css.html' %}    
+</head>
+<body>
+{% include 'snippets/nav.html' %}    
+    <div class="container">
+        {% block content %}
+        <!-- content1::::::::::::::::::::::::::::::::::::: -->
+        {% endblock content%}
+
+        <!-- {% block content2 %}
+        <h1>ENNNNND</h1>
+        {% endblock content2%} -->
+    </div>
+
+    {% include 'snippets/js.html' %}    
+
+</body>
+</html>
